@@ -1,5 +1,5 @@
 steps:
-- name: google/cloud-sdk:alpine
+- name: 'gcr.io/cloud-builders/git'
   id: Clone repo
   entrypoint: git
   args: ['clone', 'https://github.com:Gitauwairimu/Jenkins_Maven.git']
@@ -10,6 +10,10 @@ steps:
   dir: 'java-tomcat-sample'
   # images:
   # - 'us-central1-docker.pkg.dev/pork-merchant/javaimage:v1'
+   # Docker Push
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 
+          'us-central1-docker.pkg.dev/pork-merchant/javaimage:v1']
 logsBucket: 'gs://artifacts.pork-merchant.appspot.com'
 # options:
 #   logging: CLOUD_LOGGING_ONLY
