@@ -15,8 +15,8 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'us-central1-docker.pkg.dev/pork-merchant/javaimage:v1', '.']
   dir: 'java-tomcat-sample'
-images:
-  - 'us-central1-docker.pkg.dev/pork-merchant/javaimage:v1'
+# images:
+#   - 'us-central1-docker.pkg.dev/pork-merchant/javaimage:v1'
    # Docker Push
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 
