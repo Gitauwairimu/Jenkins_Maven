@@ -7,7 +7,7 @@ steps:
   args:
   - '-c'
   - |
-    git https://github.com:Gitauwairimu/Jenkins_Maven.git
+    git clone https://github.com:Gitauwairimu/Jenkins_Maven.git
     cd /java-tomcat-sample
 
 - name: 'gcr.io/cloud-builders/mvn'
