@@ -1,6 +1,6 @@
 steps:
-# - name: 'gcr.io/cloud-builders/git'
-#   args: ['clone', 'https://github.com:Gitauwairimu/Jenkins_Maven.git']
+- name: 'gcr.io/cloud-builders/git'
+  args: ['clone', 'https://source.developers.google.com/p/pork-merchant/r/cloudrepo']
 
 # - name: 'gcr.io/cloud-builders/git'
 #   entrypoint: 'bash'
@@ -13,8 +13,12 @@ steps:
 #     git clone git@github.com:Gitauwairimu/Jenkins_Maven.git
 #     cd /java-tomcat-sample
 
-- name: 'gcr.io/cloud-builders/mvn'
-  args: ['install']
+- name: 'ubuntu'
+  args: ['echo', 'hello world']
+
+
+# - name: 'gcr.io/cloud-builders/mvn'
+#   args: ['install']
 # - name: 'gcr.io/cloud-builders/docker'
 #   args: ['build', '-t', 'us-central1-docker.pkg.dev/pork-merchant/javaimage:v1', '.']
 #   dir: 'java-tomcat-sample'
