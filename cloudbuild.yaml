@@ -17,8 +17,8 @@ steps:
 #   args: ['echo', 'hello world']
 
 
-- name: 'gcr.io/cloud-builders/mvn'
-  args: ['install']
+# - name: 'gcr.io/cloud-builders/mvn'
+#   args: ['install']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'us-central1-docker.pkg.dev/pork-merchant/javaimage:v1', '.']
   dir: 'java-tomcat-sample'
