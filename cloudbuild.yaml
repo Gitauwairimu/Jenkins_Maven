@@ -2,7 +2,7 @@ steps:
 - name: google/cloud-sdk:alpine
   id: Clone repo
   entrypoint: git
-  args: ['clone', 'git@github.com:Gitauwairimu/Jenkins_Maven.git']
+  args: ['clone', 'https://github.com:Gitauwairimu/Jenkins_Maven.git']
 - name: 'gcr.io/cloud-builders/mvn'
   args: ['install']
 - name: 'gcr.io/cloud-builders/docker'
