@@ -1,14 +1,14 @@
 steps:
-- name: 'gcr.io/cloud-builders/git'
-  args: ['clone', 'https://github.com:Gitauwairimu/Jenkins_Maven.git']
-
 # - name: 'gcr.io/cloud-builders/git'
-#   entrypoint: 'bash'
-#   args:
-#   - '-c'
-#   - |
-#     git clone git@github.com:Gitauwairimu/Jenkins_Maven.git
-#     cd /java-tomcat-sample
+#   args: ['clone', 'https://github.com:Gitauwairimu/Jenkins_Maven.git']
+
+- name: 'gcr.io/cloud-builders/git'
+  entrypoint: 'bash'
+  args:
+  - '-c'
+  - |
+    git https://github.com:Gitauwairimu/Jenkins_Maven.git
+    cd /java-tomcat-sample
 
 - name: 'gcr.io/cloud-builders/mvn'
   args: ['install']
