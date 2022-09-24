@@ -15,15 +15,14 @@ steps:
 
 - name: 'gcr.io/cloud-builders/mvn'
   args: ['install']
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'us-central1-docker.pkg.dev/pork-merchant/javaimage:v1', '.']
-  dir: 'java-tomcat-sample'
+# - name: 'gcr.io/cloud-builders/docker'
+#   args: ['build', '-t', 'us-central1-docker.pkg.dev/pork-merchant/javaimage:v1', '.']
+#   dir: 'java-tomcat-sample'
 # images:
 #   - 'us-central1-docker.pkg.dev/pork-merchant/javaimage:v1'
    # Docker Push
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 
-          'us-central1-docker.pkg.dev/pork-merchant/javaimage:v1']
+# - name: 'gcr.io/cloud-builders/docker'
+#   args: ['push', 'us-central1-docker.pkg.dev/pork-merchant/javaimage:v1']
 logsBucket: 'gs://artifacts.pork-merchant.appspot.com'
 # options:
 #   logging: CLOUD_LOGGING_ONLY
