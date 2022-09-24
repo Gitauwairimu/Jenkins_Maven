@@ -2,20 +2,10 @@ steps:
 - name: 'gcr.io/cloud-builders/git'
   args: ['clone', 'https://source.developers.google.com/p/pork-merchant/r/cloudrepo']
 
-# - name: 'gcr.io/cloud-builders/git'
-#   entrypoint: 'bash'
-#   args:
-#   - '-c'
-#   - |
-#     mkdir -p ~/.ssh
-#     ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
-#     ssh-keygen -t rsa -C "user.gitauwairimu@gmail.com"
-#     git clone git@github.com:Gitauwairimu/Jenkins_Maven.git
-#     cd /java-tomcat-sample
-
-# - name: 'ubuntu'
-#   args: ['echo', 'hello world']
-
+- name: maven:3-jdk-8
+  entrypoint: mvn
+  args: ['test']
+  dir: 'java-tomcat-sample'
 
 - name: maven:3-jdk-8
   entrypoint: mvn
@@ -26,6 +16,7 @@ steps:
   args: ['build', '-t', 'gcr.io/pork-merchant/javaimage:v1', '.']
   # args: ['build', '-t', 'us-central1-docker.pkg.dev/pork-merchant/javaimage:v1', '.']
   dir: 'java-tomcat-sample'
+
 # images:
 #   - 'us-central1-docker.pkg.dev/pork-merchant/javaimage:v1'
    # Docker Push
